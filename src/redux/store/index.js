@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 
 import { expenseReducer } from '../reducers/expenses';
 
-const reducer = combineReducers({
+const rootReducer = combineReducers({
     expenses: expenseReducer
 });
 
