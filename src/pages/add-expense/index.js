@@ -1,9 +1,10 @@
 import React from 'react'
 import TopFold from '../../components/topfold'
+import './add-expense.css'
 
 const AddExpense = () => {
     return (
-        <div>
+        <div className='add-expense'>
             <TopFold />
         </div>
     )
