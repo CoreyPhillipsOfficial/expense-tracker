@@ -7,6 +7,13 @@ body {
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
+  background-color: #71ccca;
+  color: #001f3f;
+}
+
+a {
+  text-decoration: none;
+  color: #001f3f;
 }
 
 code {

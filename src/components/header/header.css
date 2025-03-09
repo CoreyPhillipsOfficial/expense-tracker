@@ -1,0 +1,84 @@
+.header-container {
+    /* make the header half the screen width */
+    width: 50%;
+
+    /* center the header */
+    margin: auto;
+
+    /* make the background of the header a different color to see where it is*/
+    /* background-color: aqua; */
+}
+
+.header {
+    /* put Expensr and Github on same line with each other */
+    display: flex;
+
+    /* stretch anything inside div to the extreme ends of the container */
+    justify-content: space-between;
+
+    /* vertically center */
+    align-items: center;
+
+    /* make it have complete width within the container */
+    flex: 1;
+
+    margin: 6px 12px;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.header-logo i {
+    display: flex;
+    align-items: center;
+    margin-left: 6px;
+}
+
+.header-button {
+    font-size: 20px;
+
+    /* allow for me to vertically align it */
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 0px 8px;
+}
+
+.header-button i {
+    margin-right: 4px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .header-container {
+        width: 90%;
+    }
+
+    .header-logo {
+        font-size: 28px;
+    }
+
+    .header-button {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 512px) {
+    .header-container {
+        width: 100%;
+    }
+
+    .header-logo {
+        font-size: 24px;
+    }
+
+    .header-button {
+        font-size: 16px;
+    }
+}
