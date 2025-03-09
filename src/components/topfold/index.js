@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './topfold.css'
+import { Link } from 'react-router-dom'
 
 const TopFold = () => {
     const [query, setQuery] = useState('')
@@ -17,21 +18,27 @@ const TopFold = () => {
                             placeholder='Search for expenses' onChange={(e) => handleQuery(e)}
                         />
                     </div>
-                    <div className="add-button">
-                        <i className="fi-rr-add"></i>
-                        <label>Add</label>
-                    </div>
+                    <Link to='/add-expense'>
+                        <div className="add-button">
+                            <i className="fi-rr-add"></i>
+                            <label>Add</label>
+                        </div>
+                    </Link>
                 </div>
             ) : (
                 <div className='add-topfold'>
-                    <div className='add-topfold-button'>
-                        <i className='fi-rr-angle-left'></i>
-                        <label htmlFor="">Back</label>
-                    </div>
-                    <div className='add-topfold-button'>
-                        <i className='fi-rr-cross-circle'></i>
-                        <label htmlFor="">Cancel</label>
-                    </div>
+                    <Link to='/'>
+                        <div className='add-topfold-button'>
+                            <i className='fi-rr-angle-left'></i>
+                            <label htmlFor="">Back</label>
+                        </div>
+                    </Link>
+                    <Link to='/'>
+                        <div className='add-topfold-button'>
+                            <i className='fi-rr-cross-circle'></i>
+                            <label htmlFor="">Cancel</label>
+                        </div>
+                    </Link>
                 </div>)}
         </div>
 

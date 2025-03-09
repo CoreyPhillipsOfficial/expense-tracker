@@ -9,10 +9,9 @@ function App() {
       <div>
         <Header />
         <Routes>
-          <Route path='/' exact component={Home} />
-          <Route path='/add-expense' component={AddExpense} />
+          <Route path='/' element={<Home />} />
+          <Route path='/add-expense' element={<AddExpense />} />
         </Routes>
-        <Home />
         <div>Footer</div>
       </div>
     </Router>
