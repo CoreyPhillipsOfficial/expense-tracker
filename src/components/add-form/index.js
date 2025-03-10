@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import './add-form.css'
 import { categories } from '../../constants/add-expense.js';
+import { addExpense } from '../../redux/actions/expenses';
 
 const AddForm = () => {
     const cat = categories
@@ -8,6 +10,7 @@ const AddForm = () => {
     const [title, setTitle] = useState('');
     const [amount, setAmount] = useState('');
     const [category, setCategory] = useState();
+    const dispatch = useDispatch()
 
     const handleTitle = (e) => {
         setTitle(e.target.value)
@@ -28,7 +31,17 @@ const AddForm = () => {
     }
 
     const handleSubmit = () => {
-        console.log('Submit Clicked');
+        if (title === '' || amount === '' || !cat) {
+            console.log('Missing data');
+            return
+        }
+        const data = {
+            title,
+            amount,
+            category,
+            createdAt: new Date().toISOString(),
+        }
+        dispatch(addExpense(data))
     }
 
     return (
