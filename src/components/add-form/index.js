@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import './add-form.css'
 import { categories } from '../../constants/add-expense.js';
 import { addExpense } from '../../redux/actions/expenses';
+import { Bounce, ToastContainer } from 'react-toastify'
 
 const AddForm = () => {
     const cat = categories
@@ -46,6 +47,19 @@ const AddForm = () => {
 
     return (
         <div className="add-form">
+            <ToastContainer
+                position="bottom-left"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick={false}
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+                transition={Bounce}
+            />
             <div className="form-item">
                 <label>Title</label>
                 <input
