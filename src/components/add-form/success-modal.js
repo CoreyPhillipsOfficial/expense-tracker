@@ -3,7 +3,7 @@ import './success-modal.css'
 import Modal from 'react-modal';
 import { Link } from 'react-router-dom';
 
-const SuccessModal = () => {
+const SuccessModal = ({ modalOpen, setModalOpen }) => {
     const customStyles = {
         content: {
             top: '50%',
@@ -18,7 +18,7 @@ const SuccessModal = () => {
     };
     return (
         <>
-            <Modal isOpen={true} style={customStyles}>
+            <Modal isOpen={modalOpen} style={customStyles}>
                 <div className="modal-inner">
                     <label>Expense added successfully!</label>
                     <img

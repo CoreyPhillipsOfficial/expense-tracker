@@ -8,12 +8,14 @@ import { addExpense } from '../../redux/actions/expenses'
 import SuccessModal from './success-modal'
 
 const AddForm = () => {
-    const cat = categories
-    const [categoryOpen, setCategoryOpen] = useState(false)
-    const [title, setTitle] = useState('')
-    const [amount, setAmount] = useState('')
-    const [category, setCategory] = useState()
-    const dispatch = useDispatch()
+    const cat = categories;
+    const [categoryOpen, setCategoryOpen] = useState(false);
+    const [title, setTitle] = useState('');
+    const [amount, setAmount] = useState('');
+    const [category, setCategory] = useState();
+    const [modalOpen, setModalOpen] = useState(false);
+    const dispatch = useDispatch();
+
 
     const handleTitle = (e) => setTitle(e.target.value)
 
@@ -43,6 +45,7 @@ const AddForm = () => {
             createdAt: new Date().toISOString(),
         }
         dispatch(addExpense(data))
+        setModalOpen(true)
     }
 
     return (
@@ -56,7 +59,7 @@ const AddForm = () => {
                 pauseOnHover
                 transition={Bounce}
             />
-            <SuccessModal />
+            <SuccessModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
             <div className="form-item">
                 <label>Title</label>
                 <input

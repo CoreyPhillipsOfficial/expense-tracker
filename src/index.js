@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import Modal from 'react-modal';
 import './index.css';
 import { Provider } from 'react-redux';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store';
+
+Modal.setAppElement("#root");
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
