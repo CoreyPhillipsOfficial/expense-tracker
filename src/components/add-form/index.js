@@ -27,6 +27,10 @@ const AddForm = () => {
         setCategoryOpen(false)
     }
 
+    const handleSubmit = () => {
+        console.log('Submit Clicked');
+    }
+
     return (
         <div className="add-form">
             <div className="form-item">
@@ -65,6 +69,12 @@ const AddForm = () => {
                             ))}
                         </div>
                     }
+                </div>
+            </div>
+            <div className="form-add-button">
+                <div onClick={handleSubmit}>
+                    <label>Add</label>
+                    <i className='fi-rr-paper-plane'></i>
                 </div>
             </div>
         </div>
