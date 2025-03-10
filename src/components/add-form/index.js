@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import './add-form.css'
 import { categories } from '../../constants/add-expense'
 import { addExpense } from '../../redux/actions/expenses'
+import SuccessModal from './success-modal'
 
 const AddForm = () => {
     const cat = categories
@@ -55,6 +56,7 @@ const AddForm = () => {
                 pauseOnHover
                 transition={Bounce}
             />
+            <SuccessModal />
             <div className="form-item">
                 <label>Title</label>
                 <input
