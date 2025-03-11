@@ -1,24 +1,28 @@
 import React from 'react'
 import './expense-list.css'
 import Card from './card';
+import { useSelector } from 'react-redux';
 
 const ExpenseList = () => {
-    const list = [
-        {
-            title: 'Made a purchase',
-            logo: 'sjahsgf',
-            createdAt: Date.now(),
-            amount: 1234,
-        }
-    ];
+    const { expenseList: list } = useSelector(state => state.expenses)
+    console.log();
+
     return (
-        <div>
+        <div className='expense-list'>
             {list.length ? (
-                list.map((item, id) => (
-                    <Card key={id} item={item} />
-                ))
-            ) : null}
+                list.map((item) => <Card item={item} />)
+            ) : (
+                <div className='empty-state'>
+                    <img
+                        src={require('../../assets/images/empty.png')}
+                        alt='Empty List'
+                        className='empty-image'
+                    />
+                    <label>Uh oh! Your expense list is empty.</label>
+                </div>
+            )}
         </div>
+
     )
 }
 
