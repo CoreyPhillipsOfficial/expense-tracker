@@ -1,0 +1,19 @@
+.card {
+    background-color: white;
+    padding: 12px;
+    margin: 2px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-image {
+    height: 40px;
+}
+
+.card-right {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+/* https://youtu.be/q6LNf3QzgXQ?si=-R3gpeZxMhzh5wKZ&t=8721 */
