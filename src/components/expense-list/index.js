@@ -10,7 +10,8 @@ const ExpenseList = () => {
     return (
         <div className='expense-list'>
             {list.length ? (
-                list.map((item) => <Card item={item} />)
+                list.map((item) =>
+                    <Card key={item.id} item={item} />)
             ) : (
                 <div className='empty-state'>
                     <img
