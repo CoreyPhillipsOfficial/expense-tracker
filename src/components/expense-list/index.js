@@ -5,9 +5,11 @@ import { useSelector } from 'react-redux';
 import { Bounce, toast, ToastContainer } from 'react-toastify';
 
 const ExpenseList = () => {
-    const { expenseList: list } = useSelector(state => state.expenses)
-    const notifySuccess = () => toast.success('Expense deleted')
-    console.log();
+    const { expenseList: list, query } = useSelector(state => state.expenses);
+    console.log("Expense List:", list);
+    console.log("Search Query:", query);
+    const filteredList = list.filter(item => item.title.toLowerCase().includes(query.trim().toLowerCase()));
+    const notifySuccess = () => toast.success('Expense deleted');
 
     return (
         <div className='expense-list'>
@@ -20,8 +22,8 @@ const ExpenseList = () => {
                 pauseOnHover
                 transition={Bounce}
             />
-            {list.length ? (
-                list.map((item) =>
+            {filteredList.length ? (
+                filteredList.map((item) =>
                     <Card key={item.id} item={item} notifySuccess={notifySuccess} />)
             ) : (
                 <div className='empty-state'>

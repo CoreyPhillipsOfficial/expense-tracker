@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 import './topfold.css'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { searchExpense } from '../../redux/actions/expenses'
 
 const TopFold = () => {
     const [query, setQuery] = useState('')
+    const dispatch = useDispatch();
     const handleQuery = (e) => {
         setQuery(e.target.value);
+        dispatch(searchExpense(e.target.value))
     }
     return (
         <div className="topfold">
