@@ -6,8 +6,8 @@ import { Bounce, toast, ToastContainer } from 'react-toastify';
 
 const ExpenseList = () => {
     const { expenseList: list, query } = useSelector(state => state.expenses);
-    console.log("Expense List:", list);
-    console.log("Search Query:", query);
+    // console.log("Expense List:", list);
+    // console.log("Search Query:", query);
     const filteredList = list.filter(item => item.title.toLowerCase().includes(query.trim().toLowerCase()));
     const notifySuccess = () => toast.success('Expense deleted');
 
@@ -24,7 +24,7 @@ const ExpenseList = () => {
             />
             {filteredList.length ? (
                 filteredList.map((item) =>
-                    <Card key={item.id} item={item} notifySuccess={notifySuccess} />)
+                    <Card key={item.createdAt} item={item} notifySuccess={notifySuccess} />)
             ) : (
                 <div className='empty-state'>
                     <img
